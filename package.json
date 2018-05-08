@@ -1,0 +1,21 @@
+{
+  "name": "fds-hackathon-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "build": "rimraf dist && parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-react-app": "^3.1.1",
+    "parcel-bundler": "^1.8.1",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  }
+}
