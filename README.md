@@ -13,10 +13,10 @@
 **Github의 fork 기능으로는 계정 당 저장소 하나밖에 복사하지 못합니다.** Fork 기능을 사용하지 않고 프로젝트를 복사하려면, 아래의 절차대로 해 주세요.
 
 1. Github에서 비어있는 새 저장소를 만들어주세요.
-1. 터미널에서 아래의 명령을 순서대로 실행해주세요. (여기서, `<user>`를 본인의 사용자 이름으로, `<old-repo>`를 복사하려고 하는 저장소 이름으로, `<new-repo>`를 방금 생성한 저장소 이름으로 바꿔주세요.
-  - `git clone --bare git@github.com:<user>/<old-repo>.git`
+1. 터미널에서 아래의 명령을 순서대로 실행해주세요. (여기서, `<old-user>/<old-repo>`를 복사하려고 하는 저장소 경로로, `<new-user>/<new-repo>`를 방금 생성한 저장소 경로로 바꿔주세요.)
+  - `git clone --bare git@github.com:<old-user>/<old-repo>.git`
   - `cd <old-repo>.git`
-  - `git push --mirror git@github.com:<user>/<new-repo>.git`
+  - `git push --mirror git@github.com:<new-user>/<new-repo>.git`
   - `cd ..`
   - `rm -rf <old-repo>.git`
 1. 이제 Github에 저장소에 복사되었습니다. 위 절차를 반복해서 여러 개의 복사본을 만들 수 있습니다.
