@@ -1,4 +1,4 @@
-# FDS 9기 중간 프로젝트 템플릿
+# FDS 중간 프로젝트 템플릿
 
 이 저장소를 중간 프로젝트에서 템플릿으로 사용할 수 있습니다. 빌드 도구로 [Parcel](https://parceljs.org/)을 사용하고 있으며, [create-react-app](https://github.com/facebook/create-react-app)에서 사용하는 [Babel](http://babeljs.io/) 프리셋인 [babel-preset-react-app](https://github.com/facebook/create-react-app/tree/master/packages/babel-preset-react-app)을 통해 여러 최신 문법을 사용할 수 있도록 설정되어 있습니다.
 
@@ -12,11 +12,7 @@
 
 **Github의 fork 기능으로는 계정 당 저장소 하나밖에 복사하지 못합니다.** Fork 기능을 사용하지 않고 프로젝트를 복사하려면, 아래의 절차대로 해 주세요.
 
-1. Github에서 비어있는 새 저장소를 만들어주세요.
-1. 터미널에서 아래의 명령을 순서대로 실행해주세요. (여기서, `<old-user>/<old-repo>`를 복사하려고 하는 저장소 경로로, `<new-user>/<new-repo>`를 방금 생성한 저장소 경로로 바꿔주세요.)
-  - `git clone --bare git@github.com:<old-user>/<old-repo>.git`
-  - `cd <old-repo>.git`
-  - `git push --mirror git@github.com:<new-user>/<new-repo>.git`
-  - `cd ..`
-  - `rm -rf <old-repo>.git`
-1. 이제 Github에 저장소에 복사되었습니다. 위 절차를 반복해서 여러 개의 복사본을 만들 수 있습니다.
+1. 복사하고 싶은 저장소를 `git clone` 명령을 사용해 내려받는다.
+1. 내려받은 폴더로 이동한 후, `rm -rf .git` 명령을 실행한다.
+1. `git init`, `git add .`, `git commit -m "..."` 명령을 차례로 실행한다. (저장소 초기화)
+1. Github에서 새 저장소를 만든 후, 위에서 초기화한 저장소를 푸시한다.
