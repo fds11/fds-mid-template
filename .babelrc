@@ -1,4 +1,10 @@
 {
-  "presets": ["react-app"],
-  "plugins": ["transform-class-properties"]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry"
+      }
+    ]
+  ]
 }
