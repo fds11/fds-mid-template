@@ -99,7 +99,7 @@ JavaScript 코드가 원하는대로 동작하지 않는데 에러가 나지도 
 1. [회원 가입](https://github.com/fds9/fds-json-server#%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0)
 1. [X-Total-Count 헤더를 통해 자료의 개수 알아내기](https://github.com/typicode/json-server#slice) - `_page` 쿼리 스트링을 써도 응답에 `X-Total-Count` 헤더가 포함됩니다.
 1. [JS에서 체크박스의 체크 여부 확인하기](https://www.w3schools.com/jsref/prop_checkbox_checked.asp)
-1. [토큰과 연결된 사용자 정보 가져오기](https://github.com/fds9/fds-json-server#%ED%86%A0%ED%81%B0%EA%B3%BC-%EC%97%B0%EA%B2%B0%EB%90%9C-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EB%B3%B4-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0)
+1. [토큰과 연결된 사용자 정보 가져오기](https://github.com/fds9/fds-json-server#%ED%86%A0%ED%81%B0%EA%B3%BC-%EC%97%B0%EA%B2%B0%EB%90%9C-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EB%B3%B4-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0)
 1. 관리자 페이지를 구현하실 때, 데이터 파일의 products 배열과 options 배열에 들어있는 모든 객체에 `"userId": 1` 속성을 추가해주세요. 이렇게 하면 상품 데이터 및 옵션 데이터는 1번 사용자의 소유가 되어, 1번 사용자가 이 데이터들을 수정할 수 있게 됩니다.
 
 ## API 요청 코드 예제 (`db.default.json` 기준)
