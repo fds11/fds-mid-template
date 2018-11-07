@@ -1,6 +1,6 @@
 # 중간 프로젝트 개발 가이드
 
-아래 요구사항을 충족시키는 쇼핑몰 웹사이트를 [Glitch에 올려둔 쇼핑몰 API 서버](https://glitch.com/edit/#!/fds-json-server-store)를 사용해 구현해주세요.
+아래 요구사항을 충족시키는 쇼핑몰 웹사이트를 [Glitch에 올려둔 쇼핑몰 API 서버](https://glitch.com/edit/#!/fds-json-server-shop)를 사용해 구현해주세요.
 
 - 최소 요구사항
   - 사용자는 **로그인**을 할 수 있습니다.
