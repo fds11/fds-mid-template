@@ -48,7 +48,8 @@
 - `cartItems` - 장바구니 항목
   - `id` - 식별자
   - `userId` - 소유자 ID
-  - `orderId` - 주문 ID (아직 구매하지 않은 항목인 경우 **-1**을 저장)
+  - `ordered` - 장바구니 항목의 주문 여부 (이미 주문된 항목이면 `true`, 주문된 적이 없으면 `false`를 저장)
+  - `orderId` - 주문 ID (아직 구매하지 않은 항목인 경우 `orderId` 속성을 만들지 말아주세요.)
   - `optionId` - 이 장바구니 항목과 연결된 옵션 ID
   - `quantity` - 구매 수량
 - `orders` - 주문
@@ -66,7 +67,7 @@
 - `cartItems`는 장바구니 항목을 나타내며, **어떤 옵션을 몇 개 주문할 예정인지**를 여기에 저장합니다.
 - 옵션별로 가격이 다를 수 있으므로, 가격은 옵션 객체의 속성에 저장합니다.
 - `orders`는 '주문 건'을 나타내는 데이터입니다. 사용자가 한 번 주문을 할 때마다 `orders` 배열에 주문 건을 나타내는 객체가 하나 추가되어야 합니다. 그리고 해당 주문 건에 포함되어야 하는 장바구니 항목들이 이 객체에 연결되어야 합니다.
-- `cartItems` 배열에 저장된 장바구니 항목의 `orderId` 속성에 `-1`이 저장되어 있다면, 이 장바구니 항목이 아직 주문된 적이 없다는 사실을 나타냅니다. `orderId` 속성에 특정 주문 건의 ID가 저장되어 있다면, 이 장바구니 항목이 이미 주문되었다는 사실을 나타냅니다.
+- `cartItems` 배열에 저장된 장바구니 항목의 `ordered` 속성에 `false`가 저장되어 있다면, 이 장바구니 항목이 아직 주문된 적이 없다는 사실을 나타냅니다. `ordered` 속성에 `true`가, `orderId` 속성에 주문 ID가 저장되어 있다면, 이 장바구니 항목이 이미 주문되었다는 사실을 나타냅니다.
 
 ## 개발 가이드
 
@@ -126,14 +127,14 @@ await api.get('/products', {
 ```js
 await api.post('/options/3/cartItems', {
   quantity: 1,
-  orderId: -1 // 주문되지 않았다는 사실을 나타냄
+  ordered: false // 주문되지 않았다는 사실을 나타냄
 })
 
 // 혹은 이렇게 하셔도 됩니다.
 await api.post('/cartItems', {
   optionId: 3,
   quantity: 1,
-  orderId: -1 // 주문되지 않았다는 사실을 나타냄
+  ordered: false // 주문되지 않았다는 사실을 나타냄
 })
 ```
 
@@ -142,7 +143,7 @@ await api.post('/cartItems', {
 ```js
 await api.get('/cartItems', {
   params: {
-    orderId: -1
+    ordered: false
   }
 })
 ```
@@ -157,6 +158,7 @@ const {data: {id: orderId}} = await api.post('/orders', {
 
 // 위에서 만든 주문 객체의 id를 장바구니 항목의 orderId에 넣어줍니다.
 await api.patch('/cartItems/1', {
+  ordered: true,
   orderId
 })
 ```
